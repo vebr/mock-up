@@ -1,0 +1,110 @@
+.cd-dropdown-triggers {
+  display: inline-block;
+  position: relative;
+  padding: 0 36px 0 15px;
+  line-height: 40px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+.cd-dropdown-triggers {
+  display: inline-block;
+  position: relative;
+  padding: 0 36px 0 15px;
+  line-height: 40px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+
+
+@media only screen and (min-width: 1024px) {
+  .cd-dropdown-triggers {
+    font-size: 1.35rem;
+  }
+  .cd-dropdown-triggers.dropdown-is-active {
+    background-color: black;
+  }
+  .no-touch .cd-dropdown-triggers.dropdown-is-active:hover {
+    background-color: black;
+  }
+}
+
+.navbar.transparent.navbar-inverse .navbar-inner {
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0);
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+}
+
+.cl{
+    position:fixed;
+    color:rgba(112, 103, 103, 0.384);
+  }
+
+  #myVideo {
+    position: static;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    max-height: 100vh;
+    background: black;
+}
+
+.content {
+    position:absolute;
+    bottom:0px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    
+}
+
+#myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: #000;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 70px;
+}
+
+#myBtn:hover {
+    background: #ddd;
+    color: black;
+}
+
+
+.card-hover .reveal {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    padding: 0;
+}
+
+.card-hover:hover .reveal {
+    height: auto;
+    visibility: visible;
+    opacity: 10;
+    transition: opacity 1s ease;
+}
+
+.h-section1 {
+    margin-left: 120px;
+    font-size: 35px;
+    padding-bottom: 1000px;
+}
+
+.h-section1 span{
+    margin: 2px;
+    font-size: 35px;
+}
+#about{
+    padding-top: 20%;
+}
