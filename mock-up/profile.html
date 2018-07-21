@@ -636,34 +636,81 @@
 		<main>
 			<section id="profile-page">
 				<h1 class="text-center">Profile</h1>
-				<div class="card container">
-						<div id="profile" class="profile">
-								<div class="user-info">
-								  <div class="profile_nav">
-									<ul>
-									  <li @click="view = 'edit-informasiAkun'; active = 'informasiAkun'" 
-										  v-bind:class="{active: active === 'informasiAkun' }">Informasi Akun</li>
-									  <li @click="view = 'edit-biodata'; active='biodata'"
-										  v-bind:class="{active: active === 'biodata' }"
-										  >Biodata</li>
-									  <li @click="view = 'edit-pendidikan'; active='pendidikan'"
-										  v-bind:class="{active: active === 'pendidikan' }">Informasi Pendidikan</li>
-									</ul>
-								  </div> 
-								</div>
-								<div class="content">
-								  <span class="bg-float">
-									{{active}}
-								  </span>
-								  <transition name="slide-fade" mode="out-in">
-									<keep-alive>
-									  <component v-bind:is="view"></component>
-									</keep-alive>
-								  </transition>
-								</div>
-							  </div>
-				</div>
-				
+
+				<div class="container">
+						<ul class="tabs">
+								<li class="tab-link current" data-tab="tab-1">Tab One</li>
+								<li class="tab-link" data-tab="tab-2">Tab Two</li>
+								<li class="tab-link" data-tab="tab-3">Tab Three</li>
+								<li class="tab-link" data-tab="tab-4">Tab Four</li>
+						</ul>
+
+						  <div id="tab-1" class="tab-content current">
+								<form id="app">
+										<div class="form-group">
+											<label for="username">Username:</label>
+											<input type="text" class="form-control" v-model="user.username.value" :disabled="!user.username.isEditing"
+											:class="{view: !user.username.isEditing}">
+											<button @click="user.username.isEditing = !user.username.isEditing" v-if="!user.username.isEditing">Edit</button>
+											<button @click="save" v-else-if="user.username.isEditing">Save</button>
+											<button v-if="user.username.isEditing" @click="cancel">Cancel</button>
+										</div>
+
+										<div class="form-group">
+											<label for="nama">Nama:</label>
+											<input type="text" class="form-control" v-model="user.nama.value" :disabled="!user.nama.isEditing"
+											:class="{view: !user.nama.isEditing}">
+											<button @click="user.nama.isEditing = !user.nama.isEditing" v-if="!user.nama.isEditing">Edit</button>
+											<button @click="save" v-else-if="user.nama.isEditing">Save</button>
+											<button v-if="user.nama.isEditing" @click="cancel">Cancel</button>
+										</div>
+
+										<div class="form-group">
+											<label for="email">Email:</label>
+											<input type="email" class="form-control" v-model="user.email.value" :disabled="!user.email.isEditing"
+											:class="{view: !user.email.isEditing}">
+											<button @click="user.email.isEditing = !user.email.isEditing" v-if="!user.email.isEditing">Edit</button>
+											<button @click="save" v-else-if="user.email.isEditing">Save</button>
+											<button v-if="user.email.isEditing" @click="cancel">Cancel</button>
+										</div>
+
+										<div class="form-group">
+											<label for="password">Password:</label>
+											<input type="password" class="form-control" v-model="user.password.value" :disabled="!user.password.isEditing"
+											:class="{view: !user.password.isEditing}">
+											<button @click="user.password.isEditing = !user.password.isEditing" v-if="!user.password.isEditing">Edit</button>
+											<button @click="save" v-else-if="user.password.isEditing">Save</button>
+											<button v-if="user.password.isEditing" @click="cancel">Cancel</button>
+										</div>
+
+										<div class="form-group">
+											<label for="statusPengguna">Status Pengguna:</label>
+											<span>{{ user.statusPengguna.value }}</span>
+											<button @click="user.statusPengguna.isEditing = !user.statusPengguna.isEditing" v-if="!user.statusPengguna.isEditing">Edit</button>
+											
+											<button @click="save" v-else-if="user.statusPengguna.isEditing">Save</button>
+											<button v-if="user.statusPengguna.isEditing" @click="cancel">Cancel</button>
+
+											<div v-if="user.statusPengguna.isEditing">
+												<input type="radio" id="siswa" value="Siswa" v-model="user.statusPengguna.value">
+												<label for="siswa">Siswa</label>
+												<input type="radio" id="guru" value="Guru" v-model="user.statusPengguna.value">
+												<label for="guru">Guru</label>
+											</div>
+										</div>
+										
+										
+
+								</form>
+						  </div>
+						  <div id="tab-2" class="tab-content">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex suscipit, cupiditate voluptatum facere, quis quibusdam, velit impedit nisi veritatis explicabo cumque at. Facere blanditiis quisquam dolorum, itaque consequuntur, sequi distinctio assumenda!
+							Nisi laboriosam fugit, aliquid esse amet itaque consequuntur ratione?
+						  </div>
+						  <div id="tab-3" class="tab-content">
+							Lorem ipsum dolor
+						  </div>
+					  </div>
 			</section>
 		</main>
 		
@@ -790,7 +837,19 @@
     <script src="src/js/modernizr.js"></script>
     <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
 	<script>
+		$(document).ready(function(){
+			
+			$('ul.tabs li').click(function(){
+				var tab_id = $(this).attr('data-tab');
 
+				$('ul.tabs li').removeClass('current');
+				$('.tab-content').removeClass('current');
+
+				$(this).addClass('current');
+				$("#"+tab_id).addClass('current');
+			})
+
+		})
 	</script>
     <!-- Bundle -->
     <script src="bundle.js"></script>
