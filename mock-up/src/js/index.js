@@ -140,4 +140,3 @@ jQuery(document).ready(function($) {
     });
 });
 
-// Back to top function

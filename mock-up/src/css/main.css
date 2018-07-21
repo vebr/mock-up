@@ -1157,7 +1157,8 @@ a {
 }
 
 #testimoni,
-#help {
+#help,
+#profile-page {
     padding-top: 5%;
     padding-bottom: 5%;
 }
@@ -1894,3 +1895,12 @@ a {
     font-style: italic;
     font-weight: 500;
 }
+
+/* Profile Page */
+
+#profile-page {
+    background: #32323469;
+}
+.dropdown:hover>.dropdown-menu {
+    display: block;
+  }
