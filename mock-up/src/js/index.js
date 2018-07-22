@@ -1,6 +1,7 @@
 import "./jquery.flexslider-min";
 import "./jquery.menu-aim";
 import "./top";
+import "./vue";
 
 // Katalog mega-dropdown //
 jQuery(document).ready(function($) {
@@ -92,7 +93,7 @@ jQuery(document).ready(function($) {
 $(document).ready(function() {
     $(window).scroll(function() {
         var scroll = $(window).scrollTop();
-        if (scroll > 300) {
+        if (scroll > 200) {
             $(".navbar-change").css("color", "red");
             $(".navbar-change").css("background", "#FECF3B");
         } else {
