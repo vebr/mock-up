@@ -1,5 +1,6 @@
 Vue.use(VeeValidate);
- 
+AOS.init();
+
 VeeValidate.Validator.extend('verify_password', {
 	getMessage: field => `Password harus mengandung setidaknya 1 hufur besar, huruf kecil, 1 angka dan 1 simbol`,
 	validate: value => {

@@ -16,7 +16,8 @@
     <link rel="apple-touch-icon" sizes="144x144" href="https://www.zenius.net/assets/img/ico/apple-touch-icon-144.png">
     <!-- CSS reset -->
     <link rel="stylesheet" href="src/css/reset.css">
-    <!-- CSS resource -->
+	<!-- CSS resource -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="src/css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
@@ -632,6 +633,12 @@
 					<li class="tab-link" data-tab="tab-2">Biodata Diri</li>
 					<li class="tab-link" data-tab="tab-3">Informasi Pendidikan</li>
 				</ul>
+				<div class="text-center mt-2">
+					<small id="passwordHelpBlock" class="form-text text-muted">
+							Masa berakhir membership: 12 Agustus 2018<br><a href="#">Perpanjang sekarang</a>
+					</small>
+				</div>
+				
 				<div class="container profile-container">
 					<div id="tab-1" class="tab-content current container">
 						<h3 class="title-tab">Informasi Akun</h3>
@@ -1176,7 +1183,7 @@
 		</main>
 		<a href="#" id="scroll" style="display: none;"><span></span></a>
         <footer class="footer">
-            <div class="container">
+            <div class="container" data-aos="zoom-out">
                 <div class="row">
                     <!-- row -->
                     <div class="col-lg-3 col-md-3 col-6">
@@ -1287,10 +1294,13 @@
 		<a href="#0" class="cd-top js-cd-top">Top</a>
 	</div>
 	<!-- Vue.js -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/vee-validate@latest/dist/vee-validate.js"></script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<!-- Bundle -->
+	<script src="bundle.js"></script>
 	<!-- JS resource-->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
@@ -1304,12 +1314,10 @@
 			$('ul.tabs li').removeClass('current');
 			$('.tab-content').removeClass('current');
 
-			$(this).addClass('current');
+			$(this).addClass('current'); 
 			$("#"+tab_id).addClass('current');
 		});
 	});
 	</script>
-    <!-- Bundle -->
-	<script src="bundle.js"></script>
 </body>
 </html>
